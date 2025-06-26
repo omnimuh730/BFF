@@ -68,3 +68,5 @@ Makefile
 .idea/
 .vscode/
 .vs/
+.vs/BFF/
+/.vs/BFF/

@@ -23,8 +23,10 @@ public:
 // Overrides
 public:
 	virtual BOOL InitInstance();
+	virtual int ExitInstance(); // <--- Add this line
 
 // Implementation
+	ULONG_PTR m_gdiplusToken; // <--- Add this line
 
 	DECLARE_MESSAGE_MAP()
 };

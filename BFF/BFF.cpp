@@ -12,6 +12,9 @@
 #endif
 
 
+// Add these lines for GDI+
+#pragma comment (lib,"Gdiplus.lib")
+using namespace Gdiplus;
 // CBFFApp
 
 BEGIN_MESSAGE_MAP(CBFFApp, CWinApp)
@@ -27,6 +30,7 @@ CBFFApp::CBFFApp()
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
 
 	// TODO: add construction code here,
+	m_gdiplusToken = 0; // Initialize token
 	// Place all significant initialization in InitInstance
 }
 
@@ -52,6 +56,9 @@ BOOL CBFFApp::InitInstance()
 
 	CWinApp::InitInstance();
 
+	// Initialize GDI+
+	GdiplusStartupInput gdiplusStartupInput;
+	GdiplusStartup(&m_gdiplusToken, &gdiplusStartupInput, NULL);
 
 	AfxEnableControlContainer();
 
@@ -105,3 +112,14 @@ BOOL CBFFApp::InitInstance()
 	return FALSE;
 }
 
+// Add the ExitInstance override to shut down GDI+
+int CBFFApp::ExitInstance()
+{
+	// Shut down GDI+
+	if (m_gdiplusToken != 0)
+	{
+		GdiplusShutdown(m_gdiplusToken);
+	}
+
+	return CWinApp::ExitInstance();
+}

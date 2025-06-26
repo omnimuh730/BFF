@@ -6,6 +6,8 @@
 #include "BFF.h"
 #include "BFFDlg.h"
 #include "afxdialogex.h"
+#include <gdiplus.h> // Good to have it visible here too
+using namespace Gdiplus; // Use GDI+ namespace
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -113,7 +115,7 @@ BOOL CBFFDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
-	m_bShowGreenCircle = TRUE; // Show green circle at startup
+	m_bShowGreenCircle = FALSE; // Show green circle at startup
 	m_pThis = this;
 	m_hKeyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardProc, NULL, 0);
 
@@ -160,49 +162,41 @@ void CBFFDlg::OnPaint()
 	}
 	else
 	{
+		CPaintDC dc(this);
+
 		CDialogEx::OnPaint(); // Call the base class first to draw the background
 
-		/*
-		if (m_bShowGreenCircle == true)
-			MessageBox(L"true", L"", NULL);
-		else
-			MessageBox(L"false", L"", NULL);
-		*/
 		// Check if we should draw the circle
 		if (m_bShowGreenCircle)
 		{
-			// Use a CClientDC for drawing outside of the original paint message scope
-			// Or simply perform drawing after the base call within the same handler.
-			// For simplicity and correctness, we get the DC for the client area.
-			CClientDC dc(this);
+			// Create a GDI+ Graphics object from the device context
+			Graphics graphics(dc.GetSafeHdc());
+
+			// *** THIS IS THE KEY LINE FOR ANTI-ALIASING ***
+			graphics.SetSmoothingMode(SmoothingModeAntiAlias);
 
 			// Define the circle's properties
-			int circleCenterX = 100; // X-coordinate of the circle's center
-			int circleCenterY = 100; // Y-coordinate of the circle's center
-			int circleRadius = 50;   // Radius of the circle
+			int circleCenterX = 100;
+			int circleCenterY = 100;
+			int circleRadius = 50;
 
-			// Create a green brush
-			CBrush greenBrush(RGB(0, 255, 0)); // RGB for green
-
-			// Select the green brush into the device context
-			CBrush* pOldBrush = dc.SelectObject(&greenBrush);
-
-			// Create a pen for the circle's outline
-			CPen blackPen(PS_SOLID, 1, RGB(0, 0, 0)); // Black solid pen with 1 pixel width
-			CPen* pOldPen = dc.SelectObject(&blackPen);
-
-			// Calculate the bounding rectangle for the circle
-			CRect circleRect(circleCenterX - circleRadius,
+			// Define the bounding rectangle for the circle
+			// GDI+ uses RectF (float) or Rect (int)
+			Rect circleRect(circleCenterX - circleRadius,
 				circleCenterY - circleRadius,
-				circleCenterX + circleRadius,
-				circleCenterY + circleRadius);
+				circleRadius * 2, // Width
+				circleRadius * 2); // Height
 
-			// Draw the ellipse (which is a circle in this case)
-			dc.Ellipse(circleRect);
+			// Create a GDI+ green brush and black pen
+			// Color is defined as (Alpha, Red, Green, Blue)
+			SolidBrush greenBrush(Color(255,36,155,209));
 
-			// Restore the original brush and pen
-			dc.SelectObject(pOldBrush);
-			dc.SelectObject(pOldPen);
+			// Draw the filled ellipse (circle)
+			graphics.FillEllipse(&greenBrush, circleRect);
+
+			// GDI+ objects (Brush, Pen) are C++ objects and are automatically
+			// destroyed when they go out of scope. No need to select them
+			// into a DC or restore old objects.
 		}
 	}
 }
@@ -220,7 +214,6 @@ LRESULT CALLBACK CBFFDlg::KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
 		if (m_pThis)
 		{
 			m_pThis->m_bShowGreenCircle = TRUE;
-//			CWnd* pStatus = m_pThis->GetDlgItem(IDC_STATIC_STATUS);
 			m_pThis->Invalidate();
 			AfxBeginThread(HideCircleThreadProc, m_pThis);
 		}
