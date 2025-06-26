@@ -1,32 +1,69 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
+# Build results
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
 *.exe
-*.out
+*.pdb
+*.ipch
+*.ilk
+*.log
+*.lib
+*.dll
+*.exp
+*.idb
+*.aps
+*.ncb
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+
+# Precompiled headers
+*.pch
+*.gch
+
+# Resource compiler generated files
+*.res
+
+# Visual Studio files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+*.vscode/
+
+# Backup & temporary files
+*.bak
+*.old
+*.sdf
+*.cache
+*.tlog
+*.lastbuildstate
+
+# Auto-generated files
+Debug/
+Release/
+x64/
+ipch/
+*.opensdf
+*.log
+*.dmp
+
+# CMake (if used)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Other binaries
 *.app
+*.out
+
+# Git files
+*.orig
+*.rej
+
+# IDE-specific (optional)
+.idea/
+.vscode/

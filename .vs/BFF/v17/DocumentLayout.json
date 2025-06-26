@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "F:\\Inno Utility development\\BFF\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Inno Utility development\\BFF\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29C60151-9EE0-73E0-89DB-E1585534D0F2}|BFF\\BFF.vcxproj|F:\\Inno Utility development\\BFF\\BFF\\BFFDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29C60151-9EE0-73E0-89DB-E1585534D0F2}|BFF\\BFF.vcxproj|solutionrelative:BFF\\BFFDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29C60151-9EE0-73E0-89DB-E1585534D0F2}|BFF\\BFF.vcxproj|F:\\Inno Utility development\\BFF\\BFF\\BFFDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29C60151-9EE0-73E0-89DB-E1585534D0F2}|BFF\\BFF.vcxproj|solutionrelative:BFF\\BFFDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{29C60151-9EE0-73E0-89DB-E1585534D0F2}|BFF\\BFF.vcxproj|F:\\Inno Utility development\\BFF\\BFF\\BFF.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 )$  \u0022     ",
       "RelativeMoniker": "D:0:0:{29C60151-9EE0-73E0-89DB-E1585534D0F2}|BFF\\BFF.vcxproj|solutionrelative:BFF\\BFF.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 )$  \u0022     "
     }
@@ -14,15 +26,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "F:\\Inno Utility development\\BFF\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "F:\\Inno Utility development\\BFF\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-26T17:35:30.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BFFDlg.h",
+              "DocumentMoniker": "F:\\Inno Utility development\\BFF\\BFF\\BFFDlg.h",
+              "RelativeDocumentMoniker": "BFF\\BFFDlg.h",
+              "ToolTip": "F:\\Inno Utility development\\BFF\\BFF\\BFFDlg.h",
+              "RelativeToolTip": "BFF\\BFFDlg.h",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwBQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-26T14:06:31.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BFFDlg.cpp",
+              "DocumentMoniker": "F:\\Inno Utility development\\BFF\\BFF\\BFFDlg.cpp",
+              "RelativeDocumentMoniker": "BFF\\BFFDlg.cpp",
+              "ToolTip": "F:\\Inno Utility development\\BFF\\BFF\\BFFDlg.cpp",
+              "RelativeToolTip": "BFF\\BFFDlg.cpp",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAiwNEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-26T14:00:31.567Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "BFF.rc - IDD_BFF_DIALOG - Dialog",
               "DocumentMoniker": "F:\\Inno Utility development\\BFF\\BFF\\BFF.rc",
               "RelativeDocumentMoniker": "BFF\\BFF.rc",
