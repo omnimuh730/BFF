@@ -67,3 +67,4 @@ Makefile
 # IDE-specific (optional)
 .idea/
 .vscode/
+.vs/
