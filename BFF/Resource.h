@@ -7,9 +7,6 @@
 #define IDS_ABOUTBOX                    101
 #define IDD_BFF_DIALOG                  102
 #define IDR_MAINFRAME                   128
-#define IDC_STATIC_STATUS               1001
-#define IDC_EDIT1                       1002
-#define IDC_EDIT2                       1003
 
 // Next default values for new objects
 // 
